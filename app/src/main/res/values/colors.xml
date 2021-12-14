@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="system_accent1_400">#34A192</color>
+    <color name="worst_tip">#DC1E08</color>
+    <color name="best_tip">#35BA01</color>
 </resources>
