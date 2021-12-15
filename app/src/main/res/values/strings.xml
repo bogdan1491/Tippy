@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tippy</string>
     <string name="_24">24%</string>
+    <string name="tip">Tip</string>
 </resources>
