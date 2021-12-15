@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTipAmount: TextView
     private lateinit var tvTotalAmount: TextView
     private lateinit var tvTipDescription: TextView
+    private lateinit var numberOfFriends: EditText
+    private lateinit var splitBillButton: Button
+    private lateinit var splitBillAmount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         tvTipAmount = findViewById(R.id.tvTipAmount)
         tvTotalAmount = findViewById(R.id.tvTotalAmount)
         tvTipDescription = findViewById(R.id.tipDescritpionTextView)
+        numberOfFriends = findViewById(R.id.numberOfFrindsTextView)
+        splitBillButton = findViewById(R.id.splitBillButton)
+        splitBillAmount = findViewById(R.id.splitBillTextView)
         seekBarTip.progress = INITIAL_TIP_PERCENT
         tvTipPercent.text = "$INITIAL_TIP_PERCENT%"
         updateTipDescription(INITIAL_TIP_PERCENT)
@@ -63,6 +71,12 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 Log.i(TAG, "afterTextChanged $s")
                 computeTipAndTotal()
+            }
+
+        })
+        splitBillButton.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(v: View?) {
+
             }
 
         })

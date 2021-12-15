@@ -2,4 +2,14 @@
     <string name="app_name">Tippy</string>
     <string name="_24">24%</string>
     <string name="tip">Tip</string>
+    <string name="split_bill">Split Bill</string>
+    <string name="acceptable_string">Acceptable</string>
+    <string name="made_by_string">MADE WITH ❤️ BY BOGDAN</string>
+    <string name="split_bill_amount_string">Split bill amount</string>
+    <string name="number_of_friends_string">Number of friends</string>
+    <string name="bill_amount_string">Bill amount</string>
+    <string name="total_string">Total</string>
+    <string name="base_string">Base</string>
+    <string name="the_total_amount_string">The total amount</string>
+    <string name="the_tip_string">The tip</string>
 </resources>
