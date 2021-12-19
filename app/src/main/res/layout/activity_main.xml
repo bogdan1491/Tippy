@@ -141,10 +141,16 @@
         android:id="@+id/splitBillTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:hint="@string/split_bill_amount_string"
+        android:textAlignment="center"
+        android:textColor="#009688"
         android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/madeTextView"
         app:layout_constraintEnd_toEndOf="@+id/splitBillButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/splitBillButton"
         app:layout_constraintTop_toBottomOf="@+id/splitBillButton"
         tools:ignore="TextContrastCheck" />
@@ -157,9 +163,11 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="120dp"
         android:hint="@string/number_of_friends_string"
+        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>

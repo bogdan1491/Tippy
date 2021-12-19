@@ -7,15 +7,17 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 private const val TAG = "MainActivity"
 private const val INITIAL_TIP_PERCENT = 15
 
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
 class MainActivity : AppCompatActivity() {
     private lateinit var etBaseAmount: EditText
     private lateinit var seekBarTip: SeekBar
@@ -74,14 +76,26 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        splitBillButton.setOnClickListener(object: View.OnClickListener{
+        splitBillButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-
+            if (numberOfFriends.text.isEmpty() || tvTotalAmount.text.isEmpty()){
+                val text = "Please add the bill amount and the number of friends"
+                val duration = Toast.LENGTH_SHORT
+                val toast = Toast.makeText(applicationContext, text, duration)
+                toast.show()
+            }else{
+                val splitBill : Double = tvTotalAmount.text.toString().toDouble() / numberOfFriends.text.toString().toDouble()
+                splitBillAmount.text = "%.2f".format(splitBill)
+            }
             }
 
         })
     }
 
+    /**
+     * Update tip description based on the percentage and change the color in range of red to green
+     *
+     */
     private fun updateTipDescription(tipPercent: Int) {
         val tipDescription = when (tipPercent) {
             in 0..9 -> "Poor"
@@ -100,6 +114,10 @@ class MainActivity : AppCompatActivity() {
         tvTipDescription.setTextColor(color)
     }
 
+    /**
+     * Compute the tip amount based on the selected percent and the final amount
+     *
+     */
     private fun computeTipAndTotal() {
         if (etBaseAmount.text.isEmpty()) {
             tvTipAmount.text = ""
