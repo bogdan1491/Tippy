@@ -18,6 +18,17 @@
         app:layout_constraintStart_toStartOf="@+id/numberOfFrindsTextView"
         app:layout_constraintTop_toBottomOf="@+id/numberOfFrindsTextView" />
 
+    <Button
+        android:id="@+id/sendBillButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Send bill"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/etBaseAmmount"
         android:layout_width="wrap_content"
@@ -33,6 +44,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/tvBaseLabel"
         app:layout_constraintStart_toEndOf="@+id/tvBaseLabel"
         app:layout_constraintTop_toTopOf="@+id/tvBaseLabel"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/numberOfFrindsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="120dp"
+        android:hint="@string/number_of_friends_string"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount"
         tools:ignore="TextContrastCheck" />
 
     <SeekBar
@@ -113,20 +140,6 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/madeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/made_by_string"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/tipDescritpionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -142,32 +155,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
         android:hint="@string/split_bill_amount_string"
         android:textAlignment="center"
         android:textColor="#009688"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/madeTextView"
         app:layout_constraintEnd_toEndOf="@+id/splitBillButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/splitBillButton"
         app:layout_constraintTop_toBottomOf="@+id/splitBillButton"
         tools:ignore="TextContrastCheck" />
-
-    <EditText
-        android:id="@+id/numberOfFrindsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="120dp"
-        android:hint="@string/number_of_friends_string"
-        android:inputType="number"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>

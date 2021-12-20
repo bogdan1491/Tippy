@@ -1,12 +1,14 @@
 package com.onyx.tippy
 
 import android.animation.ArgbEvaluator
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.view.View.OnClickListener
 import android.widget.*
 import androidx.core.content.ContextCompat
 
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numberOfFriends: EditText
     private lateinit var splitBillButton: Button
     private lateinit var splitBillAmount: TextView
+    private lateinit var sendBillButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         numberOfFriends = findViewById(R.id.numberOfFrindsTextView)
         splitBillButton = findViewById(R.id.splitBillButton)
         splitBillAmount = findViewById(R.id.splitBillTextView)
+        sendBillButton = findViewById(R.id.sendBillButton)
         seekBarTip.progress = INITIAL_TIP_PERCENT
         tvTipPercent.text = "$INITIAL_TIP_PERCENT%"
         updateTipDescription(INITIAL_TIP_PERCENT)
@@ -67,7 +71,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
+                if (!numberOfFriends.text.isEmpty()) {
+                    val compute =
+                        tvTotalAmount.text.toString().toDouble() / numberOfFriends.text.toString()
+                            .toDouble()
+                    splitBillAmount.text = compute.toString()
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -76,20 +85,30 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        splitBillButton.setOnClickListener(object : View.OnClickListener {
+        splitBillButton.setOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {
-            if (numberOfFriends.text.isEmpty() || tvTotalAmount.text.isEmpty()){
-                val text = "Please add the bill amount and the number of friends"
-                val duration = Toast.LENGTH_SHORT
-                val toast = Toast.makeText(applicationContext, text, duration)
-                toast.show()
-            }else{
-                val splitBill : Double = tvTotalAmount.text.toString().toDouble() / numberOfFriends.text.toString().toDouble()
-                splitBillAmount.text = "%.2f".format(splitBill)
+                if (numberOfFriends.text.isEmpty() || tvTotalAmount.text.isEmpty()) {
+                    val text = "Please add the bill amount and the number of friends"
+                    val duration = Toast.LENGTH_SHORT
+                    val toast = Toast.makeText(applicationContext, text, duration)
+                    toast.show()
+                } else {
+                    val splitBill: Double =
+                        tvTotalAmount.text.toString().toDouble() / numberOfFriends.text.toString()
+                            .toDouble()
+                    splitBillAmount.text = "%.2f".format(splitBill)
+                }
             }
-            }
-
         })
+        sendBillButton.setOnClickListener(object : OnClickListener {
+            override fun onClick(v: View?) {
+                val intent = Intent(this@MainActivity, SaveBillActivity::class.java)
+                startActivity(intent)
+
+            }
+        })
+
+
     }
 
     /**
