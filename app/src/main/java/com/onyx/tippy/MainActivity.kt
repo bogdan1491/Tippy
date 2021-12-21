@@ -103,6 +103,12 @@ class MainActivity : AppCompatActivity() {
         sendBillButton.setOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {
                 val intent = Intent(this@MainActivity, SaveBillActivity::class.java)
+                intent.putExtra("Bill amount", etBaseAmount.text.toString())
+                    .putExtra("Tip percent", tvTipPercent.text)
+                    .putExtra("Tip amount", tvTipAmount.text)
+                    .putExtra("Number of friend", numberOfFriends.text)
+                    .putExtra("Splited bill", splitBillAmount.text)
+
                 startActivity(intent)
 
             }
