@@ -23,14 +23,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
-        android:text="Send bill"
+        android:text="@string/send_bill"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etBaseAmmount"
+        android:id="@+id/baseAmountEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -41,9 +41,9 @@
         android:minHeight="48dp"
         android:textColorHint="?android:attr/textColorHint"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvBaseLabel"
-        app:layout_constraintStart_toEndOf="@+id/tvBaseLabel"
-        app:layout_constraintTop_toTopOf="@+id/tvBaseLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/baseAmountLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/baseAmountLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/baseAmountLabelTextView"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -59,42 +59,42 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmountTextView"
         tools:ignore="TextContrastCheck" />
 
     <SeekBar
-        android:id="@+id/seekBarTip"
+        android:id="@+id/tipPercemtSeekBar"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:max="30"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentLabel"
-        app:layout_constraintStart_toStartOf="@+id/etBaseAmmount"
-        app:layout_constraintTop_toTopOf="@+id/tvTipPercentLabel" />
+        app:layout_constraintBottom_toBottomOf="@+id/tipPercentLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/baseAmountEditText"
+        app:layout_constraintTop_toTopOf="@+id/tipPercentLabelTextView" />
 
     <TextView
-        android:id="@+id/tvTipLabel"
+        android:id="@+id/tipLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="@string/tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvTipPercentLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/baseAmountLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercentLabelTextView" />
 
     <TextView
-        android:id="@+id/tvTotalLabel"
+        android:id="@+id/totalLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/total_string"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvTipLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/baseAmountLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tipLabelTextView" />
 
     <TextView
-        android:id="@+id/tvBaseLabel"
+        android:id="@+id/baseAmountLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -106,7 +106,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTipPercentLabel"
+        android:id="@+id/tipPercentLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -114,29 +114,29 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/baseAmountLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/baseAmountLabelTextView" />
 
     <TextView
-        android:id="@+id/tvTipAmount"
+        android:id="@+id/tipAmountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/the_tip_string"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTipLabel"
-        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
-        app:layout_constraintTop_toTopOf="@+id/tvTipLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/tipPercemtSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/tipLabelTextView"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/tvTotalAmount"
+        android:id="@+id/totalAmountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/the_total_amount_string"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
-        app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
-        app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/totalLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/tipAmountTextView"
+        app:layout_constraintTop_toTopOf="@+id/totalLabelTextView"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -146,9 +146,9 @@
         android:layout_marginTop="10dp"
         android:text="@string/acceptable_string"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
-        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
-        app:layout_constraintTop_toBottomOf="@+id/seekBarTip" />
+        app:layout_constraintEnd_toEndOf="@+id/tipPercemtSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/tipPercemtSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercemtSeekBar" />
 
     <TextView
         android:id="@+id/splitBillTextView"
