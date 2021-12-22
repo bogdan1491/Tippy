@@ -106,8 +106,8 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("Bill amount", etBaseAmount.text.toString())
                     .putExtra("Tip percent", tvTipPercent.text)
                     .putExtra("Tip amount", tvTipAmount.text)
-                    .putExtra("Number of friend", numberOfFriends.text)
-                    .putExtra("Splited bill", splitBillAmount.text)
+                    .putExtra("Number of friends", numberOfFriends.text.toString())
+                    .putExtra("Split bill", splitBillAmount.text)
 
                 startActivity(intent)
 
