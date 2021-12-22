@@ -13,4 +13,5 @@
     <string name="the_total_amount_string">The total amount</string>
     <string name="the_tip_string">The tip</string>
     <string name="send_bill">Send bill</string>
+    <string name="text_placeholder">Text placeholder</string>
 </resources>
