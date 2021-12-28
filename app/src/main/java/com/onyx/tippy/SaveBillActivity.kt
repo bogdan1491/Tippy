@@ -14,11 +14,7 @@ class SaveBillActivity : AppCompatActivity() {
         billInfoTextView = findViewById(R.id.receiveBillTextView)
         val intent : Intent = getIntent()
 
-        billInfoTextView.text = "The bill amount was ${intent.getStringExtra("Bill amount")}, " +
-                "tip percent ${intent.getStringExtra("Tip percent")}, " +
-                "tip amount ${intent.getStringExtra("Tip amount")}, " +
-                "number of friends: ${intent.getStringExtra("Number of friends")}, " +
-                "split bill amount ${intent.getStringExtra("Split bill")}"
+        billInfoTextView.text
     }
 }
 
